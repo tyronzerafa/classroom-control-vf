@@ -10,6 +10,6 @@ file { '/etc/skel':
     ensure => file,
     owner => 'root',
     group => 'root',
-    source => 'puppet:///modules/skeletons/files/bashrc',
+    source => 'puppet:///modules/skeletons/bashrc',
   }
 }
