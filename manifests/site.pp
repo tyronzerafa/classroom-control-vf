@@ -72,5 +72,5 @@ node default {
   include users
   
   notify { "Update 4": }
-  include skeleton
+  include skeletons
 }
