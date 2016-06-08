@@ -59,10 +59,10 @@ node default {
  
   schedule { 'daily maintenance window':
     period => daily,
-    range  => '11:20-11:21',
+    range  => '9:20-9:25',
   }
   
-  exec { 'mkdir /tmp/tyronKing':
+  exec { '/usr/bin/mkdir /tmp/tyronKing':
     # The schedule metaparameter
     schedule => 'daily maintenance window',
   }
