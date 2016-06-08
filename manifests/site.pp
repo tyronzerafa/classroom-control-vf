@@ -59,7 +59,7 @@ node default {
  
   schedule { 'daily maintenance window':
     period => daily,
-    range  => '9:20-9:25',
+    range  => '09:20-09:25',
   }
   
   exec { '/usr/bin/mkdir /tmp/tyronKing':
