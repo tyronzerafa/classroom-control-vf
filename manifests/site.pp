@@ -69,8 +69,10 @@ node default {
   
   notify { "Update 3": }
 
-  include users
+  #include users
   
   notify { "Update 4": }
-  include skeletons
+  #include skeletons
+  
+  notify { "Update 4": }
 }
