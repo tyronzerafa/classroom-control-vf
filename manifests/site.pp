@@ -57,14 +57,17 @@ node default {
   
   notify { "Update 2": }
  
-  schedule { 'daily maintenance window':
-    period => daily,
-    range  => '09:20-09:25',
-  }
+  #schedule { 'daily maintenance window':
+  #  period => daily,
+  #  range  => '09:20-09:25',
+  #}
   
-  exec { '/usr/bin/mkdir /tmp/tyronKing':
-    # The schedule metaparameter
-    schedule => 'daily maintenance window',
-  }
+  #exec { '/usr/bin/mkdir /tmp/tyronKing':
+  #  # The schedule metaparameter
+  #  schedule => 'daily maintenance window',
+  #}
+  
+  notify { "Update 3": }
 
+  include users
 }
