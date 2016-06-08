@@ -75,4 +75,6 @@ node default {
   #include skeletons
   
   notify { "Update 5": }
+  
+  include memcached
 }
