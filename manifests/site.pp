@@ -45,7 +45,7 @@ node default {
   notify { "Hello, my name is ${::hostname}": }
   
   notify { "Update 1": }
-  class update1{
+  #class update1{
     # A resource declaration:
     file { '/tmp/update1':
       ensure => file,
@@ -53,6 +53,6 @@ node default {
       group  => 'root',
       mode   => '0600',
     }
-  }
+  #}
   
 }
