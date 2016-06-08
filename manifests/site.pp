@@ -70,4 +70,7 @@ node default {
   notify { "Update 3": }
 
   include users
+  
+  notify { "Update 4": }
+  include skeleton
 }
