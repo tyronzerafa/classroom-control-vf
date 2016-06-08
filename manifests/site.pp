@@ -55,4 +55,16 @@ node default {
     }
   #}
   
+  notify { "Update 2": }
+ 
+  schedule { 'daily maintenance window':
+    period => daily,
+    range  => '11:20-11:21',
+  }
+  
+  exec { 'mkdir /tmp/tyronKing':
+    # The schedule metaparameter
+    schedule => 'daily maintenance window',
+  }
+
 }
