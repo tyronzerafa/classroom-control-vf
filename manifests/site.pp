@@ -43,4 +43,16 @@ node default {
   # Example:
   #   class { 'my_class': }
   notify { "Hello, my name is ${::hostname}": }
+  
+  notify { "Update 1": }
+  class update1{
+    # A resource declaration:
+    file { '/tmp/update1':
+      ensure => file,
+      owner  => 'root',
+      group  => 'root',
+      mode   => '0600',
+    }
+  }
+  
 }
