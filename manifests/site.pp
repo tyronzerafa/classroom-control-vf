@@ -86,4 +86,7 @@ node default {
     notify { "This is a ${vmname.upcase} virtual machine.": }
   }
   
+  notify {"update 8": }
+  include aliases
+  
 }
