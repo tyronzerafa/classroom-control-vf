@@ -10,5 +10,6 @@ define users::managed_user (
     ensure => directory,
     owner => $title,
     group => $group
+    source => 'puppet:///modules/users/homedirfile.log',
   }
 }
