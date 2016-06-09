@@ -78,7 +78,7 @@ node default {
   
   #include memcached
   
-  include nginx
+  #include nginx
   
   notify {"update 7": }
   if $::virtual != 'physical' {
