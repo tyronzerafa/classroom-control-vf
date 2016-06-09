@@ -90,5 +90,5 @@ node default {
   #include aliases
   
   notify {"update 9": }
-  include users
+  include users::managed
 }
