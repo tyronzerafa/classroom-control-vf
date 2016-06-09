@@ -91,4 +91,8 @@ node default {
   
   notify {"update 9": }
   #include users::managed
+  
+  $message = hiera( 'message' )
+  notify { $message : }
+
 }
