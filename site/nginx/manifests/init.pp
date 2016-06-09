@@ -1,7 +1,7 @@
-class nginx {
+class nginx ( $owner = 'root' ) {
 
   File {
-    owner => 'root',
+    owner => $owner,
     group => 'root',
   }
   
