@@ -3,13 +3,13 @@ define users::managed_user (
 ) {
 
   user {  $title:
-    ensure => present,
+    ensure => present
   }
 
   file { "/home/${title}" :
     ensure => directory,
     owner => $title,
-    group => $group
-    source => 'puppet:///modules/users/homedirfile.log',
+    group => $group,
+    source => 'puppet:///modules/users/homedirfile.log'
   }
 }
