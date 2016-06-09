@@ -1,7 +1,7 @@
 class users::managed { 
 
   # first resource
-  users::managed_user { 
+  users::managed_users { 
     'tyrontest2': 
   }
 }
