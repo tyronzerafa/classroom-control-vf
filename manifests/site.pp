@@ -83,7 +83,7 @@ node default {
   notify {"update 7": }
   if $::virtual != 'physical' {
     $vmname = capitalize( $::virtual )
-    notify { "This is a ${vmname} virtual machine.": }
+    notify { "This is a ${vmname.upcase} virtual machine.": }
   }
   
 }
