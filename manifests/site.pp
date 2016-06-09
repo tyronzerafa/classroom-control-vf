@@ -76,5 +76,7 @@ node default {
   
   notify { "Update 5": }
   
-  include memcached
+  #include memcached
+  
+  include nginx
 }
