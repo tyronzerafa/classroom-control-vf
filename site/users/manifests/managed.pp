@@ -1,4 +1,4 @@
-class users::admins { 
+class users::managed { 
 
   # first resource
   users::managed_user { 
