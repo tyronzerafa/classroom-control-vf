@@ -89,4 +89,6 @@ node default {
   notify {"update 8": }
   #include aliases
   
+  notify {"update 9": }
+  include users
 }
