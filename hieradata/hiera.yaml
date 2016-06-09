@@ -1,0 +1,10 @@
+---
+:backends:
+  - yaml
+
+:yaml:
+  :datadir: '/etc/puppetlabs/code/environments/production/hieradata'
+
+:hierarchy:
+  - tyronzerafa
+  - defaults
