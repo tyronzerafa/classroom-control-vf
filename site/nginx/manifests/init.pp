@@ -1,5 +1,14 @@
 class nginx ( $owner = 'root' ) {
 
+  case $::osfamily {
+    'redhat', 'debian': {
+      $confdir = '/etc/nginx'
+    }
+    'windows': {
+      $confdir = 'C:/ProgramData/nginx'
+    }
+  }
+  
   File {
     owner => $owner,
     group => 'root',
@@ -20,20 +29,21 @@ class nginx ( $owner = 'root' ) {
     source => 'puppet:///modules/nginx/index.html',
   }
   
-  file { '/etc/nginx/nginx.conf':
+  file { "${confdir}/nginx.conf":
     ensure => file,
     mode => '0664',
-    source =>'puppet:///modules/nginx/nginx.conf',
+    #source =>'puppet:///modules/nginx/nginx.conf',
+    content =>  template('nginx/nginx.conf.erb'),
     require => Package['nginx'],
     notify => Service['nginx'],
   }
   
-  file { '/etc/nginx/conf.d':
+  file { "${confdir}/conf.d":
     ensure=> directory,
     mode=> '0775',
   }
   
-  file { '/etc/nginx/conf.d/default.conf':
+  file { "${confdir}/conf.d/default.conf":
     ensure => file,
     mode => '0664',
     source => 'puppet:///modules/nginx/default.conf',
