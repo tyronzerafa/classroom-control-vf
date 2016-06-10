@@ -1,13 +1,8 @@
-class nginx ( $owner = 'root' ) {
-
-  case $::osfamily {
-    'redhat', 'debian': {
-      $confdir = '/etc/nginx'
-    }
-    'windows': {
-      $confdir = 'C:/ProgramData/nginx'
-    }
-  }
+class nginx ( 
+  $confdir = $nginx::params::confdir,
+	$logdir  = $nginx::params::logdir, 
+	$owner = 'root' 
+	)  inherits nginx::params { 
   
   File {
     owner => $owner,
