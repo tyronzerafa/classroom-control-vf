@@ -1,4 +1,5 @@
 class nginx ( 
+$pidloc = '/var/run/',
   $confdir = $nginx::params::confdir,
 	$logdir  = $nginx::params::logdir, 
 	$owner = 'root' 
